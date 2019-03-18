@@ -1,0 +1,105 @@
+int sensors [16];
+int Rowvalues [3][16];
+int relay = 12;
+int NormalVal [16];
+float intercept = 2.4048766;
+float p1 = 0.0037799;
+float p2 = -0.0012941;
+float p3 = -0.0009646;
+float p4 = -0.0017078;
+float p5 = 0.0069360;
+float p6 = -0.0146087;
+float p7 = -0.0003307;
+float p8 = 0.0069119;
+float p9 = 0.0002762;
+float p10 = -0.0061325;
+float p11 = -0.0048919;
+float p12 = 0.0003831;
+float p13 = -0.0050197;
+float p14 = 0.0060271;
+float p15 = -0.0010755;
+float p16 = 0.0043082;
+
+
+ 
+void setup() {
+
+  Serial.begin(9600);
+  
+  //assgining sensors ports
+  for (int i = 0; i < 16; i++){
+    sensors[i] =  i;
+  }
+  //assgining pinModes
+ for (int i = 0; i < 16; i++){
+    pinMode(sensors[i], INPUT);
+  }
+ 
+ 
+  pinMode(relay, OUTPUT);
+ digitalWrite(relay,HIGH);
+}
+
+void loop() {
+  //reading x1-16 data
+ for (int ii=0;ii<3;ii++){
+  for (int i = 0; i < 16; i++){
+  if (analogRead(sensors[i])<900&&analogRead(sensors[i])>10){  
+    Rowvalues[ii][i] = analogRead(sensors[i]);
+  }else{
+    Rowvalues[ii][i] =-1;
+  }
+  }
+  
+  delay(100);
+ }
+int NumberOfErrors=0;
+int total=0;
+  for (int i = 0; i < 16; i++){
+   for (int ii = 0; ii < 3; ii++){
+  if (Rowvalues[ii][i] != -1) {
+      total=total+Rowvalues[ii][i];
+  }else{
+      NumberOfErrors++;
+  }
+  }
+  NormalVal[i]=total/(3-NumberOfErrors);
+  NumberOfErrors=0;
+  total=0;
+ }
+
+
+  Serial.println(movement(NormalVal));
+  
+  
+ 
+   
+
+
+  
+}
+
+char movement(int arr [16]){
+float dir =   intercept + p1 * arr[0] + p2 * arr[1] + p3 * arr[2] + p4 * arr[3] +p5 * arr[4] + p6 * arr[5] + p7 * arr[6] + p8 * arr[7] + p9 * arr[8] + p10 * arr[9] + p11 * arr[10] + p12 * arr[11] + p13 *arr[12] + p14 * arr[13] + p15 * arr[14] + p16 *arr[15]  ;               
+char m;
+if (dir > 0.7 && dir < 1.3 ){
+  m = 'd';
+}
+else if (dir > 1.7 && dir < 2.3) {
+  m= 'w';
+  
+}
+else if (dir > 2.7 && dir < 3.3) {
+  m= 'a';
+  
+}
+else if (dir > 3.7 && dir < 4.3) {
+  m= 's';
+  
+}
+
+  return m;
+}
+
+
+
