@@ -2,7 +2,6 @@ int sensors [16];
 int relay = 12;
 int values [16];
 void setup() {
- Serial.print("w");
   Serial.begin(9600);
   
   
@@ -35,12 +34,12 @@ void loop() {
     
     //remove rows
     if(values[i] > 682 ){
-      Serial.print(values[i]);
+      Serial.print("111");
       Serial.print(", ");
     }
     
     else if ( values[i] < 214) {
-      Serial.print(values[i]);
+      Serial.print("000");
       Serial.print(", ");
     }
     //print
