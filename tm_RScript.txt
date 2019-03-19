@@ -1,0 +1,5 @@
+dataset=read.table("d:/d.txt",header=TRUE)
+dataset$d
+results = lm(Y ~ X1 + X2 + X3 + X4 + X5 + X6 + X7 + X8 + X9 + X10 + X11 + X12 + X13 + X14 + X15 + X16, data=dataset)
+summary(results)
+direction=results$coef[1] + results$coef[2]*314 + results$coef[3]*86 + results$coef[4]*29 + results$coef[5]*248 + results$coef[6]*242 + results$coef[7]*54 + results$coef[8]*65 + results$coef[9]*296 + results$coef[10]*361 + results$coef[11]*321 + results$coef[12]*313 + results$coef[13]*264 + results$coef[14]*302 + results$coef[15]*294 + results$coef[16]*264 + results$coef[17]*341
