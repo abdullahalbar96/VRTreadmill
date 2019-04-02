@@ -41,98 +41,24 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(relay,HIGH);
-  int senValue1 = analogRead(sensor1);
- // Serial.print("Sensor-1 : ");
- // delay(300);
-  //Serial.println(senValue1);
-  //----------------------------
-  
-  int senValue2 = analogRead(sensor2);
-  //Serial.print("Sensor-2 : ");
-  //delay(300);
-  //Serial.println(senValue2);
+digitalWrite(relay,HIGH);
+int senValue1 = analogRead(sensor1);
+int senValue2 = analogRead(sensor2);
+int senValue3 = analogRead(sensor3);
+int senValue4 = analogRead(sensor4);
+int senValue5 = analogRead(sensor5);
+int senValue6 = analogRead(sensor6);
+int senValue7 = analogRead(sensor7);
+int senValue8 = analogRead(sensor8);
+int senValue9 = analogRead(sensor9);
+int senValue10 = analogRead(sensor10);
+int senValue11 = analogRead(sensor11);
+int senValue12 = analogRead(sensor12);
+int senValue13 = analogRead(sensor13);
+int senValue14 = analogRead(sensor14);
+int senValue15 = analogRead(sensor15);
+int senValue16 = analogRead(sensor16);
 
- //-----------------------------
- int senValue3 = analogRead(sensor3);
-  //Serial.print("Sensor-3 : ");
-  delay(300);
-  //Serial.println(senValue3);
-   //-----------------------------
- int senValue4 = analogRead(sensor4);
- // Serial.print("Sensor-4 : ");
-//  delay(300);
-  //Serial.println(senValue4);
-  
-   //-----------------------------
- int senValue5 = analogRead(sensor5);
-  //Serial.print("Sensor-5 : ");
-  //delay(300);
-  //Serial.println(senValue5);
-  
-  
-   //-----------------------------
- int senValue6 = analogRead(sensor6);
-  //Serial.print("Sensor-6 : ");
-  //delay(300);
-  //Serial.println(senValue6);
- //-----------------------------
- int senValue7 = analogRead(sensor7);
- // Serial.print("Sensor-7 : ");
-//  delay(300);
- // Serial.println(senValue7);
-  //-----------------------------
- int senValue8 = analogRead(sensor8);
-  //Serial.print("Sensor-8 : ");
-  //delay(300);
- // Serial.println(senValue8);
-   //-----------------------------
- int senValue9 = analogRead(sensor9);
-  //Serial.print("Sensor-9 : ");
-  //delay(300);
- // Serial.println(senValue9);
-    //-----------------------------
-  int senValue10 = analogRead(sensor10);
-  //Serial.print("Sensor-10 : ");
-  //delay(300);
-  //Serial.println(senValue10);
-  
-    //-----------------------------
-  int senValue11 = analogRead(sensor11);
-  //Serial.print("Sensor-11 : ");
-  //delay(300);
-  //Serial.println(senValue11);
-  
-    //-----------------------------
-  int senValue12 = analogRead(sensor12);
-  //Serial.print("Sensor-12 : ");
-  //delay(300);
- // Serial.println(senValue12);
-  
-    //-----------------------------
-  int senValue13 = analogRead(sensor13);
-  //Serial.print("Sensor-13 : ");
-  //delay(300);
-  //Serial.println(senValue13);
-  
-    //-----------------------------
-  int senValue14 = analogRead(sensor14);
-  //Serial.print("Sensor-14 : ");
- // delay(300);
-  //Serial.println(senValue14);
-  
-    //-----------------------------
-  int senValue15 = analogRead(sensor15);
- // Serial.print("Sensor-15 : ");
- // delay(300);
- // Serial.println(senValue15);
-  
-    //-----------------------------
-  int senValue16 = analogRead(sensor16);
- // Serial.print("Sensor-16 : ");
-  
- // Serial.println(senValue16);
-  
   Serial.print(",");
   Serial.print(" ");
   Serial.print(",");
