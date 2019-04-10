@@ -19,8 +19,6 @@ float p13 = -0.0096637;
 float p14 = 0.0096108;
 float p15 = 0.0009228;
 float p16 = -0.0027945;
-
-int baselineLightAvg=398;
  
 void setup() {
 
@@ -94,23 +92,13 @@ int total=0;
 // end of merge
 
 
-// lightVariention ajustment 
-// The classified has been trained under certain light conditions and will not work if the light conditions change dramatically
-// to solve this problem, we use a hardcoded baseline value of the average light, during training (baselineLightAvg). 
-// Then we calculate the average light during the operation (opLightAvg). If opLightAvg>baselineLightAvg, -> d=opLightAvg-baselineLightAvg, else if 
-// if opLightAvg<=baselineLightAvg, ->d=baselineLightAvg-opLightAvg, 
-// and then all the 16 values calculate before - d
 
 
 
-  int d=baselineLightAvg-averageLight(NormalVal);
 
-//for(int k=0;k<16;k++){
-//NormalVal[k]=NormalVal[k]+d;
-  
-//}
+ 
 
-//Serial.println(GetMin(NormalVal));
+
 
 //check if person on the machine
 if (getMin(NormalVal)>270){
