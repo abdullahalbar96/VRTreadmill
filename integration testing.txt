@@ -1,0 +1,26 @@
+input values: 
+a forward movement
+ 
+ 
+Test case 1 
+Expected Output: pressing of the W key on the keyboard
+Actual Output: keyboard is pressing " w "
+Result:PASS
+ 
+ 
+Test case 2 
+Expected Output: pressing of the D key on the keyboard
+actual output: keyboard is pressing " w " 
+Result:FAIL
+ 
+ 
+Test case 3 
+Expected Output: pressing of the A key on the keyboard
+actual output: keyboard is pressing " w "
+Result:FAIL
+ 
+ 
+Test case 4 
+Expected Output: pressing of the S key on the keyboard
+actual output: keyboard is pressing " w "
+Result:FAIL
